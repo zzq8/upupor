@@ -67,7 +67,7 @@ public enum LimitType {
     CREATE_COMMENT,
 
     /**
-     * 发送优先验证码
+     * 发送邮箱验证码
      */
     SEND_EMAIL_VERIFY_CODE,
 

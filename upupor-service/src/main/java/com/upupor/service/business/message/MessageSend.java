@@ -60,6 +60,7 @@ public class MessageSend {
             if (!abstractMessage.isSend(messageModel)) {
                 continue;
             }
+            //UNKNOWN 这里有两个实现，具体调用的是哪个????     实测先进了Email.class
             abstractMessage.send(messageModel);
         }
     }

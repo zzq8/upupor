@@ -48,6 +48,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MemberOperateService {
+    //XD 搞懂这里自动装配的时候  这个值怎么装配进来的        项目启动时候就10个对象初始化放进来    @Component  Register **extends AbstractMember**
     private final List<AbstractMember<? extends BaseMemberReq>> abstractMemberList;
 
     public CcResponse run(MemberBusiness memberBusiness, BaseMemberReq baseMemberReq) {

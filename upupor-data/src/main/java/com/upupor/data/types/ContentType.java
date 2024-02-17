@@ -183,7 +183,7 @@ public enum ContentType {
         contentTypeList.add(TECH);
         contentTypeList.add(QA);
         contentTypeList.add(SHARE);
-        contentTypeList.add(GPT);
+//        contentTypeList.add(GPT);
 //        contentTypeList.add(RECORD);
 //        contentTypeList.add(WORKPLACE);
 //        contentTypeList.add(TOPIC);

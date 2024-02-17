@@ -57,7 +57,7 @@ import static com.upupor.framework.CcConstant.USER_SETTING_DEFAULT_CONTENT;
  * @author cruise
  * @createTime 2022-02-12 16:11
  */
-@RequiredArgsConstructor
+@RequiredArgsConstructor  //XD 它会为带有@NonNull或者final修饰的成员变量生成构造函数
 @Service
 @Order(10)
 public class SetUserDefaultContentType implements PrepareData {

@@ -101,6 +101,7 @@ public class UpuporBusinessListener {
     @EventListener
     @Async
     public void trueSend(EmailTemplateReplaceAndSendEvent templateReplaceAndSendEvent) {
+        //UNKNOWN 这一步报错！！！谁调用的它 XDDD
         CcEmailUtils.sendEmail(templateReplaceAndSendEvent);
     }
 }

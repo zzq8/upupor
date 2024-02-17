@@ -353,6 +353,7 @@ public class MemberServiceImpl implements MemberService {
             throw new BusinessException(ErrorCode.PARAM_ERROR);
         }
 
+        //xd 相对常用的eq api 这里是三个参数重载的 具体看源码
         LambdaQueryWrapper<Member> query = new LambdaQueryWrapper<Member>()
                 .eq(UserCheckFieldType.EMAIL.equals(userCheckFieldType), Member::getEmail, field)
                 .eq(UserCheckFieldType.USER_NAME.equals(userCheckFieldType), Member::getUserName, field);

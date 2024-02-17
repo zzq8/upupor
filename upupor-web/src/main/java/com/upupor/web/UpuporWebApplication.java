@@ -27,10 +27,15 @@
 
 package com.upupor.web;
 
+import com.upupor.service.business.email.TrueSend;
+import com.upupor.service.business.member.MemberOperateService;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
@@ -56,7 +61,7 @@ import java.time.ZoneId;
 @SpringBootApplication
 @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 86400)
 @EnableAsync
-public class UpuporWebApplication {
+public class UpuporWebApplication implements CommandLineRunner {
     public static final String STATIC_SOURCE_VERSION;
 
     static {
@@ -65,6 +70,15 @@ public class UpuporWebApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(UpuporWebApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(UpuporWebApplication.class, args);
+        MemberOperateService bean = run.getBean(MemberOperateService.class);
+    }
+
+
+    @Autowired
+    TrueSend send;
+    @Override
+    public void run(String... args) throws Exception {
+//        send.qqMail();       //到 junit 测试
     }
 }

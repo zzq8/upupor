@@ -14,6 +14,25 @@ server:
 
 # spring配置
 spring:
+  mail:
+    host: smtp.qq.com
+    username: zzq2333@qq.com
+    password: ${MAIL_password}
+    default-encoding: utf-8
+    port: 465
+    #配置阿里云服务器发送邮件
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: smtp.qq.com
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            port: 465
+          auth: true
+          starttls:
+            enable: true
+            required: true
   #flyway
   flyway:
     enabled: true
@@ -27,7 +46,7 @@ spring:
   # thymeleaf配置
   thymeleaf:
     # 开启会提高并发能力
-    cache: ${THYMELEAF_CACHE:true} # 开发时关闭缓存,不然没法看到实时页面
+    cache: ${THYMELEAF_CACHE:true} # 开发时关闭缓存,不然没法看到实时页面   #xd 如果外部环境中没有定义该属性，将使用默认值 true
     prefix: classpath:/templates/
     suffix: .html
     check-template-location: true
@@ -44,7 +63,7 @@ spring:
           paths: /**
   # 数据源配置
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver

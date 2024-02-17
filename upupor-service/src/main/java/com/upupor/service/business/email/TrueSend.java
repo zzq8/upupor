@@ -36,13 +36,18 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.framework.BusinessException;
 import com.upupor.framework.ErrorCode;
 import com.upupor.framework.config.Email;
 import com.upupor.framework.config.UpuporConfig;
 import com.upupor.framework.utils.SpringContextUtils;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+import javax.mail.internet.MimeMessage;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -76,6 +81,8 @@ public class TrueSend {
 
 
     /**
+     * XD: IAcsClient是阿里云的SDK中的类，用于调用阿里云的各项服务，包括邮件服务。但是IAcsClient并不适用于直接连接到QQ邮箱发送邮件。
+     *
      * @param toAddress 目标地址 可以给多个收件人发送邮件，收件人之间用逗号分开，批量发信建议使用BatchSendMailRequest方式
      * @param subject   邮件主题
      * @param tagName   控制台创建的标签
@@ -131,6 +138,37 @@ public class TrueSend {
             throw new BusinessException(ErrorCode.SEND_EMAIL_ERROR, e.getMessage());
         }
     }
+
+
+
+
+    // 注入 mail 实体，所有邮件相关的操作，都在这个类上
+    @Resource
+    private JavaMailSenderImpl mailSender;
+
+    public void qqMail() throws MessagingException, javax.mail.MessagingException {
+        // 负责邮件消息类
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        // 参数1：消息类
+        // 参数2：是否支持发送附件
+        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, false);
+        // 邮件主题
+        mimeMessageHelper.setSubject("SpringBoot 实现超文本邮件发送~");
+        // 参数1：邮件内容
+        // 参数2：是否支持html
+        mimeMessageHelper.setText("<h1 style='color:blue>'一个文本文件已发送到你的QQ邮箱上~</h1>",true);
+        // 附件
+        // 参数1：发送到邮件的文件名
+        // 参数2：本地文件的绝对路径,不知道在哪的，右键文件点属性有个位置，复制下来，加上文件名
+//        mimeMessageHelper.addAttachment("SpringBoot01.jpg", new File("C:\\Users\\xzh\\Desktop\\SpringBoot01.jpg"));
+        // 发送人
+        mimeMessageHelper.setTo("547061946@qq.com");
+        // 接收人
+        mimeMessageHelper.setFrom("zzq2333@qq.com");
+        // 开始发送
+        mailSender.send(mimeMessage);
+    }
+
 
     private static String handSendEmailErrCode(String errorCode) {
         for (String code : errMsgMap.keySet()) {

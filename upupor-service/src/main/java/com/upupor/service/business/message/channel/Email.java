@@ -92,6 +92,7 @@ public class Email extends AbstractMessage {
             sendEmailEvent.setToAddress(email);
             sendEmailEvent.setTitle(emailModel.getTitle());
             sendEmailEvent.setContent(emailModel.getContent());
+            //UNKNOWN @FunctionalInterface这里的作用是什么          @EventListener注解！！！！！？？？？
             eventPublisher.publishEvent(sendEmailEvent);
         } catch (Exception e) {
             e.printStackTrace();
