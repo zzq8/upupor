@@ -79,6 +79,7 @@ public class EmailListener {
             templateReplaceAndSendEvent.setTitle(emailEvent.getTitle());
             templateReplaceAndSendEvent.setContent(emailEvent.getContent());
             templateReplaceAndSendEvent.setToAddress(emailEvent.getToAddress());
+            //XD 这里理解为事件生产者，   该方法也是消费者-消费完到这一步再生产一个templateReplaceAndSendEvent事件给com.upupor.web.listener.UpuporBusinessListener.trueSend消费
             eventPublisher.publishEvent(templateReplaceAndSendEvent);
         }
     }

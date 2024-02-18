@@ -27,6 +27,7 @@
 
 package com.upupor.web.listener;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.data.dto.seo.GoogleSeoDto;
 import com.upupor.framework.CcRedis;
 import com.upupor.framework.common.CcTemplateConstant;
@@ -100,8 +101,8 @@ public class UpuporBusinessListener {
      */
     @EventListener
     @Async
-    public void trueSend(EmailTemplateReplaceAndSendEvent templateReplaceAndSendEvent) {
-        //UNKNOWN 这一步报错！！！谁调用的它 XDDD
+    public void trueSend(EmailTemplateReplaceAndSendEvent templateReplaceAndSendEvent) throws MessagingException, javax.mail.MessagingException {
+        //UNKNOWN 这一步报错！！！谁调用的它    XD  学了事件驱动后理解了！！！这里可以理解为事件消费者
         CcEmailUtils.sendEmail(templateReplaceAndSendEvent);
     }
 }

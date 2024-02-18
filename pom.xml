@@ -116,6 +116,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+<!--XD: 作用可选依赖-->
             <optional>true</optional>
         </dependency>
 

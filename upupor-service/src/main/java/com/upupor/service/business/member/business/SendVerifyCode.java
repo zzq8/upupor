@@ -77,7 +77,7 @@ public class SendVerifyCode extends AbstractMember<SendVerifyCodeReq> {
         String emailTitle;
         String emailContent = "验证码: " + verifyCode;
         if (addVerifyCodeReq.getSource().equals(REGISTER)) {
-            emailTitle = "Gnmd新用户注册";
+            emailTitle = "Gnmd 新用户注册";
             // 新用户注册,检查邮箱是否已经存在
             if (memberService.checkUserExists(addVerifyCodeReq.getEmail(), UserCheckFieldType.EMAIL)) {
                 throw new BusinessException(ErrorCode.EMAIL_ALREADY_REGISTER);

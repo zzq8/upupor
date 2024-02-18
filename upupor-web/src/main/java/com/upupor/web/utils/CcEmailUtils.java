@@ -27,6 +27,7 @@
 
 package com.upupor.web.utils;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.framework.common.CcTemplateConstant;
 import com.upupor.framework.utils.SpringContextUtils;
 import com.upupor.service.business.email.TrueSend;
@@ -51,7 +52,7 @@ public class CcEmailUtils {
      *
      * @param trueSendEvent
      */
-    public static void sendEmail(EmailTemplateReplaceAndSendEvent trueSendEvent) {
+    public static void sendEmail(EmailTemplateReplaceAndSendEvent trueSendEvent) throws MessagingException, javax.mail.MessagingException {
         // 接入模板
         Map<String, Object> maps = new HashMap<>(2);
         maps.put(CcTemplateConstant.TITLE, trueSendEvent.getTitle());
@@ -61,7 +62,8 @@ public class CcEmailUtils {
         trueSendEvent.setContent(content);
 
         TrueSend trueSend = SpringContextUtils.getBean(TrueSend.class);
-        trueSend.trueSend(trueSendEvent.getToAddress(), trueSendEvent.getTitle(), null, trueSendEvent.getContent());
+//        trueSend.trueSend(trueSendEvent.getToAddress(), trueSendEvent.getTitle(), null, trueSendEvent.getContent());
+        trueSend.qqMail(trueSendEvent.getToAddress(), trueSendEvent.getTitle(), null, trueSendEvent.getContent());
     }
 
 

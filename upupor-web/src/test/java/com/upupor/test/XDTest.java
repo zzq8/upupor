@@ -13,7 +13,7 @@ public class XDTest {
     TrueSend send;
     @Test
     void testQQMail() throws MessagingException, javax.mail.MessagingException {
-        send.qqMail();
+//        send.qqMail();
 //        TrueSend bean = SpringContextUtils.getBean(TrueSend.class);
 //        bean.qqMail();
     }

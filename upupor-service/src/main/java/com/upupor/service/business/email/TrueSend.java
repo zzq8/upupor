@@ -146,27 +146,28 @@ public class TrueSend {
     @Resource
     private JavaMailSenderImpl mailSender;
 
-    public void qqMail() throws MessagingException, javax.mail.MessagingException {
+    public Boolean qqMail(String toAddress, String title, Object o, String content) throws MessagingException, javax.mail.MessagingException {
         // 负责邮件消息类
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         // 参数1：消息类
         // 参数2：是否支持发送附件
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, false);
         // 邮件主题
-        mimeMessageHelper.setSubject("SpringBoot 实现超文本邮件发送~");
+        mimeMessageHelper.setSubject(title);
         // 参数1：邮件内容
         // 参数2：是否支持html
-        mimeMessageHelper.setText("<h1 style='color:blue>'一个文本文件已发送到你的QQ邮箱上~</h1>",true);
+        mimeMessageHelper.setText(content,true);
         // 附件
         // 参数1：发送到邮件的文件名
         // 参数2：本地文件的绝对路径,不知道在哪的，右键文件点属性有个位置，复制下来，加上文件名
 //        mimeMessageHelper.addAttachment("SpringBoot01.jpg", new File("C:\\Users\\xzh\\Desktop\\SpringBoot01.jpg"));
         // 发送人
-        mimeMessageHelper.setTo("547061946@qq.com");
+        mimeMessageHelper.setTo(toAddress);
         // 接收人
         mimeMessageHelper.setFrom("zzq2333@qq.com");
         // 开始发送
         mailSender.send(mimeMessage);
+        return true;
     }
 
 
