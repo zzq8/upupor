@@ -27,6 +27,7 @@
 
 package com.upupor.web;
 
+import com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration;
 import com.upupor.service.business.email.TrueSend;
 import com.upupor.service.business.member.MemberOperateService;
 import lombok.extern.slf4j.Slf4j;
@@ -58,7 +59,7 @@ import java.time.ZoneId;
         "com.upupor.lucene",
         "com.upupor.data",
 })
-@SpringBootApplication
+@SpringBootApplication(exclude = PageHelperAutoConfiguration.class)    //FIXME Cause: java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!
 @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 86400)
 @EnableAsync
 public class UpuporWebApplication implements CommandLineRunner {

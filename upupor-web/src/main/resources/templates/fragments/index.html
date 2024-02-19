@@ -467,12 +467,12 @@ from: 来源
         <div class="mt-1 small">
             · <a class="text-black-50" href="/view/history">浏览记录 <span th:include="fragments/icon::view_record" class="cv-icon-small"></span></a>
         </div>
-        <div class="mt-1 small">
-            · <a class="cv-link text-black-50" href="/our-home">暗淡蓝点 <span th:include="fragments/icon::earth"></span></a>
-        </div>
-        <div class="mt-1 small">
-            · <span th:replace="fragments/business::open_github"></span>
-        </div>
+<!--        <div class="mt-1 small">-->
+<!--            · <a class="cv-link text-black-50" href="/our-home">暗淡蓝点 <span th:include="fragments/icon::earth"></span></a>-->
+<!--        </div>-->
+<!--        <div class="mt-1 small">-->
+<!--            · <span th:replace="fragments/business::open_github"></span>-->
+<!--        </div>-->
     </div>
 </div>
 
@@ -754,11 +754,11 @@ from: 来源
             <a th:class="${target == 'brand-story'?'nav-link cv-link active':'nav-link cv-link'}" href="/brand-story"
                title="品牌故事"><img th:data-src="${ossStatic} + @{/icons/system/footer/brand-story.svg}"
                                  class="lazyload cv-icon"/> 品牌故事</a>
-            <a th:class="${target == 'team'?'nav-link cv-link active':'nav-link cv-link'}" href="/developer" title="技术"><i
-                    class="bi bi-code-square" style="color:#ce7900"></i> 开发者</a>
-            <a th:class="${target == 'thanks'?'nav-link cv-link active':'nav-link cv-link'}" href="/thanks"
-               title="致谢"><img th:data-src="${ossStatic} + @{/icons/system/footer/thanks.svg}"
-                               class="lazyload cv-icon"/> 致谢</a>
+<!--            <a th:class="${target == 'team'?'nav-link cv-link active':'nav-link cv-link'}" href="/developer" title="技术"><i-->
+<!--                    class="bi bi-code-square" style="color:#ce7900"></i> 开发者</a>-->
+<!--            <a th:class="${target == 'thanks'?'nav-link cv-link active':'nav-link cv-link'}" href="/thanks"-->
+<!--               title="致谢"><img th:data-src="${ossStatic} + @{/icons/system/footer/thanks.svg}"-->
+<!--                               class="lazyload cv-icon"/> 致谢</a>-->
             <!--    <a th:class="${target == 'logo-design'?'nav-link cv-link active':'nav-link cv-link'}" href="/logo-design" title="logo设计"><img th:data-src="${ossStatic} + @{/icons/system/footer/design.svg}" class="lazyload cv-icon" />  logo设计</a>-->
             <a th:class="${target == 'check-info'?'nav-link cv-link active':'nav-link cv-link'}" href="/about-ad"
                title="关于广告"><img th:data-src="${ossStatic} + @{/icons/system/footer/ad.svg}" class="lazyload cv-icon"/>

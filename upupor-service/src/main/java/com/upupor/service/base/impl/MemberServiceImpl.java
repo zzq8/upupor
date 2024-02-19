@@ -107,6 +107,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Member register(AddMemberReq addMemberReq) {
+        //UNKNOWN ID生成规则
         String userId = CcUtils.getUuId();
         long createTime = CcDateUtil.getCurrentTime();
         RegisterModel registerModel = RegisterModel.builder()

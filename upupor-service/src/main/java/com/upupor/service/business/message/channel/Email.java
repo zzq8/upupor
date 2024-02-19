@@ -50,6 +50,10 @@ import static com.upupor.framework.CcConstant.UPUPOR_EMAIL;
  * @date 2022年11月10日
  * @email: yangrunkang53@gmail.com
  */
+
+/**
+ * 这是注册时的邮件发送
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -92,7 +96,7 @@ public class Email extends AbstractMessage {
             sendEmailEvent.setToAddress(email);
             sendEmailEvent.setTitle(emailModel.getTitle());
             sendEmailEvent.setContent(emailModel.getContent());
-            //UNKNOWN @FunctionalInterface这里的作用是什么   @EventListener注解！！！！！？？？？
+            //UNKNOWN @FunctionalInterface这里的作用是什么   @EventListener注解！！！！！？？？？   XD: 学了事件驱动懂了
             eventPublisher.publishEvent(sendEmailEvent);
         } catch (Exception e) {
             e.printStackTrace();

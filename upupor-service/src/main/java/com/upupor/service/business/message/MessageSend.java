@@ -60,7 +60,7 @@ public class MessageSend {
             if (!abstractMessage.isSend(messageModel)) {
                 continue;
             }
-            //UNKNOWN 这里有两个实现，具体调用的是哪个????     实测先进了Email.class
+            //UNKNOWN 这里有两个实现，具体调用的是哪个????     实测【注册的验证码】进了Email.class    【注册】则是调用的inner.class
             abstractMessage.send(messageModel);
         }
     }

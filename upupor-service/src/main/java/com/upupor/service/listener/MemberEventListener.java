@@ -203,7 +203,7 @@ public class MemberEventListener {
     @Async
     public void registerInnerMessage(MemberRegisterEvent memberRegisterEvent) {
         // 添加站内信
-        String msg = "欢迎来到Upupor~  很高兴遇见你~";
+        String msg = "欢迎来到Gnmd~  很高兴遇见你~";
         String msgId = CcUtils.getUuId();
 
         MessageSend.send(MessageModel.builder()
