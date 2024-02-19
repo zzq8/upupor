@@ -27,13 +27,13 @@
 
 package com.upupor.web.utils;
 
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.framework.common.CcTemplateConstant;
 import com.upupor.framework.utils.SpringContextUtils;
 import com.upupor.service.business.email.TrueSend;
 import com.upupor.service.listener.event.EmailTemplateReplaceAndSendEvent;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.mail.MessagingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,10 +49,8 @@ public class CcEmailUtils {
 
     /**
      * 发送邮件
-     *
-     * @param trueSendEvent
      */
-    public static void sendEmail(EmailTemplateReplaceAndSendEvent trueSendEvent) throws MessagingException, javax.mail.MessagingException {
+    public static void sendEmail(EmailTemplateReplaceAndSendEvent trueSendEvent) throws MessagingException {
         // 接入模板
         Map<String, Object> maps = new HashMap<>(2);
         maps.put(CcTemplateConstant.TITLE, trueSendEvent.getTitle());

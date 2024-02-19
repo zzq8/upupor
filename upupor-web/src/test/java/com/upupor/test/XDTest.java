@@ -9,7 +9,6 @@ import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.web.UpuporWebApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +20,7 @@ public class XDTest {
 //    @Autowired
 //    TrueSend send;
     @Test
-    void testQQMail() throws MessagingException, javax.mail.MessagingException {
+    void testQQMail() {
 //        send.qqMail();
 //        TrueSend bean = SpringContextUtils.getBean(TrueSend.class);
 //        bean.qqMail();

@@ -36,7 +36,6 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import com.upupor.framework.BusinessException;
 import com.upupor.framework.ErrorCode;
 import com.upupor.framework.config.Email;
@@ -47,6 +46,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.util.HashMap;
 import java.util.Map;
@@ -146,7 +146,7 @@ public class TrueSend {
     @Resource
     private JavaMailSenderImpl mailSender;
 
-    public Boolean qqMail(String toAddress, String title, Object o, String content) throws MessagingException, javax.mail.MessagingException {
+    public Boolean qqMail(String toAddress, String title, Object o, String content) throws MessagingException {
         // 负责邮件消息类
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         // 参数1：消息类
