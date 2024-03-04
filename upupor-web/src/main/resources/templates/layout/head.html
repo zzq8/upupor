@@ -49,13 +49,15 @@
         <!--告知Google的网页的本地化版本-->
         <link rel="alternate" hreflang="zh-Hans" href="https://www.upupor.com" />
         <!--bootstrap css-->
+<!--        GET http://localhost:2020   /bootstrap/css/5/bootstrap.min-99e54d8e467b26ef66ff560393a00091.css net::ERR_CONNECTION_REFUSED-->
+<!--        //FIXME  Thymeleaf这里@{}会导致 .css 之前会拼接一串-99e54d8e467b26ef66ff560393a00091   为什么？    XD：Spring配置启动了静态资源版本控制解决缓存不刷新问题-->
         <link th:href="${ossStatic} + @{/bootstrap/css/5/bootstrap.min.css}" type="text/css" rel="stylesheet">
         <link th:href="${ossStatic} + @{/semantic-ui/semantic.min.css}" type="text/css" rel="stylesheet">
         <link th:href="${ossStatic} + @{/bootstrap/css/5/bootstrap-grid.min.css}" type="text/css" rel="stylesheet">
         <link th:href="${ossStatic} + @{/bootstrap/css/5/bootstrap-reboot.min.css}" type="text/css" rel="stylesheet">
         <link th:href="'/bootstrap/icons/bootstrap-icons.css?v='+${staticSourceVersion}" type="text/css" rel="stylesheet">
         <link rel="canonical" th:href="${#request.getRequestURI() == '/'?'https://www.upupor.com':'https://www.upupor.com'+#request.getRequestURI()}">
-        <!--UPUPOR全局css-->
+        <!--UPUPOR全局css         ${ossStatic} + '/css/cv.css'-->
         <link th:href="${ossStatic} + @{/css/cv.css}" type="text/css" rel="stylesheet">
         <link th:href="${ossStatic} + @{/plugins/normalize/normalize.css}" type="text/css" rel="stylesheet">
         <link th:href="${ossStatic} + @{/plugins/viewerjs/viewer.min.css}" type="text/css" rel="stylesheet">

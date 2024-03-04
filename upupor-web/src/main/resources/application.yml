@@ -54,10 +54,11 @@ spring:
     mode: HTML # 用非严格的 HTML
     servlet:
       content-type: text/html # spring.thymeleaf.content-type=text/html
-  # 静态资源启用版本控制
+  # 静态资源启用版本控制             #UNKONW这里启用了hash版本文件名为了避免缓存，但是minio我不知道在哪里配置跟上hash名字访问！！！       XD：Author是用Python脚本上传解决MinIO
   resources:
     chain:
       strategy:
+        #MD5实现
         content:
           enabled: true
           paths: /**

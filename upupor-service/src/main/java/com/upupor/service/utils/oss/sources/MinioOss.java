@@ -61,30 +61,30 @@ public class MinioOss extends AbstractOss {
      * XD 作者用的 minio   我这里想改为七牛云有Test代码了
      * 想想还是本地吧
      */
-    @Override
-    public void uploadToOss(String folderName, InputStream inputStream) {
-        try {
-            String[] folderNameSplit = folderName.split(CcConstant.BACKSLASH);
-            if (ArrayUtils.isEmpty(folderNameSplit)) {
-                throw new BusinessException(ErrorCode.UPLOAD_ERROR, "请指定目录及文件");
-            }
-            String fileName = folderNameSplit[folderNameSplit.length - 2]+"/"+folderNameSplit[folderNameSplit.length - 1];
-
-            String resourcePath = "upupor-web/src/main/resources/public/" + fileName;
-            File file = new File(resourcePath);
-            FileUtils.copyInputStreamToFile(inputStream, file);
-        } catch (Exception e) {
-            log.error("上传失败异常日志", e);
-            throw new BusinessException(ErrorCode.UPLOAD_ERROR, e.getMessage());
-        }
-    }
+//    @Override
+//    public void uploadToOss(String folderName, InputStream inputStream) {
+//        try {
+//            String[] folderNameSplit = folderName.split(CcConstant.BACKSLASH);
+//            if (ArrayUtils.isEmpty(folderNameSplit)) {
+//                throw new BusinessException(ErrorCode.UPLOAD_ERROR, "请指定目录及文件");
+//            }
+//            String fileName = folderNameSplit[folderNameSplit.length - 2]+"/"+folderNameSplit[folderNameSplit.length - 1];
+//
+//            String resourcePath = "upupor-web/src/main/resources/public/" + fileName;
+//            File file = new File(resourcePath);
+//            FileUtils.copyInputStreamToFile(inputStream, file);
+//        } catch (Exception e) {
+//            log.error("上传失败异常日志", e);
+//            throw new BusinessException(ErrorCode.UPLOAD_ERROR, e.getMessage());
+//        }
+//    }
 
 
     /**
      * 以前作者代码
      */
 //    @Override
-    public void uploadToOss2(String folderName, InputStream inputStream) {
+    public void uploadToOss(String folderName, InputStream inputStream) {
         Minio minio = upuporConfig.getMinio();
         try {
             // Create a minioClient with the MinIO server playground, its access key and secret key.
