@@ -70,9 +70,6 @@
                             <a class="cv-link text-black-50" href="/view/history"><span
                                     th:include="fragments/icon::view_record"></span>浏览记录</a>
                         </li>
-                        <li class="list-inline-item me-1 text-black-50">
-                            |
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +77,7 @@
                 <div class="col w-100 text-black-50 border-top">
                     <span class="text-black-50 small" th:if="${responseTime} != null and ${responseTime} >= 0"
                           th:text="'响应时间: ' + ${responseTime}+'ms'"></span> ·
-                    <span><a class="text-black-50 small" href="https://eco.upupor.com/upupor/business/version.html">版本:[[${staticSourceVersion}]]</a></span> ·
+                    <span><a class="text-black-50 small" href="">版本:[[${staticSourceVersion}]]</a></span>
                 </div>
             </div>
         </div>
