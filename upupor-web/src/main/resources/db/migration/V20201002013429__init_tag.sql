@@ -24,8 +24,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-INSERT INTO `tag` VALUES (1, 'back-end', 1, '后端', 0, 'http://localhost:2020/icons/background.png', 1582824705, '2020-04-15 11:35:19');
-INSERT INTO `tag` VALUES (2, 'front-end', 1, '前端', 0, 'http://localhost:2020/icons/web.png', 1582824706, '2020-04-15 11:35:58');
-INSERT INTO `tag` VALUES (3, 'linux', 1, 'Linux', 0, 'http://localhost:2020/icons/linux.png', 1582824707, '2020-04-15 11:35:28');
-INSERT INTO `tag` VALUES (4, 'security', 1, '安全技术', 1, 'http://localhost:2020/icons/security.png', 1582824708, '2020-09-07 02:43:48');
-INSERT INTO `tag` VALUES (5, 'seo', 1, 'SEO', 0, 'http://localhost:2020/icons/seo.png', 1582824709, '2020-04-15 11:35:48');
+INSERT INTO `tag` VALUES (1, 'back-end', 1, '后端', 0, 'https://zzq8.cn/blog/icons/background.png', 1582824705, '2020-04-15 11:35:19');
+INSERT INTO `tag` VALUES (2, 'front-end', 1, '前端', 0, 'https://zzq8.cn/blog/icons/web.png', 1582824706, '2020-04-15 11:35:58');
+INSERT INTO `tag` VALUES (3, 'linux', 1, 'Linux', 0, 'https://zzq8.cn/blog/icons/linux.png', 1582824707, '2020-04-15 11:35:28');
+INSERT INTO `tag` VALUES (4, 'security', 1, '安全技术', 1, 'https://zzq8.cn/blog/icons/security.png', 1582824708, '2020-09-07 02:43:48');
+INSERT INTO `tag` VALUES (5, 'seo', 1, 'SEO', 0, 'https://zzq8.cn/blog/icons/seo.png', 1582824709, '2020-04-15 11:35:48');
