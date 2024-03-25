@@ -47,7 +47,7 @@ import java.util.Map;
 @Component
 public class SpringContextUtils implements ApplicationContextAware {
 
-    //UNKNOWN 这里不用注入吗     XD 因为实现了此接口重写方法拿到了
+    //UNKNOWN 这里不用注入吗     XD 因为实现了 ApplicationContextAware 此接口重写方法拿到了
     private static ApplicationContext applicationContext;
 
     public static ApplicationContext getApplicationContext() {

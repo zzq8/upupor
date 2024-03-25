@@ -108,8 +108,8 @@ public class MinioOss extends AbstractOss {
             minioClient.uploadObject(
                     UploadObjectArgs.builder()
                             .bucket(minio.getBucketName())
-                            .object(folderName)
-                            .filename(file.getName())
+                            .object(folderName)   //上传到MinIO bucket哪个文件  /radio/7M4D7lnZ.mp3
+                            .filename(file.getName())   //本地该文件，相对路径   7M4D7lnZ.mp3
                             .build());
             file.delete();
         } catch (Exception e) {

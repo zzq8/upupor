@@ -117,7 +117,7 @@ public class PageAspectAspect {
             }
 
             // 调用业务方法
-            result = proceedingJoinPoint.proceed();
+            result = proceedingJoinPoint.proceed();       //XD 这里调用目标方法，这之前的代码都是【前置逻辑】    下面的代码都是【后置逻辑】
 
             // 调用业务方法之后
             if (result instanceof ModelAndView) {

@@ -101,7 +101,7 @@ public class ViewController {
             DailyPoints.URL, // 每日签到
             ApplyTagView.URL, // 标签申请
             TodoListView.URL, // 待办
-            ContentDetailView.URL, // 内容详情-公开
+            ContentDetailView.URL, // 内容详情-公开               //XD 文章详情内容URL请求
             DraftContentDetailView.URL, // 内容详情-非公开
             RadioListView.URL, // 电台列表
             CreateRadioView.URL, // 创建电台

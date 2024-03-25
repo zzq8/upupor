@@ -155,12 +155,12 @@ public class DeflaterUtils {
     }
 
     public static void main(String[] args) {
-//        String He = "Hello";
-//        System.out.println(DeflaterUtils.zipString(He));
-//        System.out.println(DeflaterUtils.unzipString(DeflaterUtils.zipString(He)));
+        String He = "Hello";
+        System.out.println(DeflaterUtils.zipString(He));
+        System.out.println(DeflaterUtils.unzipString(DeflaterUtils.zipString(He)));
 
-//        String hel = wrap("Hello world");
-//        System.out.println(hel);
-//        System.out.println(hel.substring(START.length(), hel.length() - END.length()));
+        String hel = wrap("Hello world");
+        System.out.println(hel);
+        System.out.println(hel.substring(START.length(), hel.length() - END.length()));
     }
 }

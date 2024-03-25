@@ -29,8 +29,8 @@ public class XDTest {
     @Test
     public void testAvatar() throws IOException {
 //        AvatarHelper.create(123123123);
-        long l = 01123;
-        double d=0x12345678;
+        char chr = 127;
+
     }
 
     /**

@@ -35,7 +35,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
@@ -58,8 +58,9 @@ import java.time.ZoneId;
         "com.upupor.lucene",
         "com.upupor.data",
 })
-@SpringBootApplication   //FIXME Cause: java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!
-@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 86400)
+@SpringBootApplication
+//XD 注解将会话的最大非活动间隔时间设置为 86400 秒（即 24 小时）。这意味着如果会话在 24 小时内没有任何活动，它将被认为是非活动的，并可能被清除。
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 86400)  //XD 会话过期时间重置：每当用户进行会话操作时（例如访问页面或发送请求），Spring Session 会自动更新 Redis 中存储的会话的过期时间。这样，只要用户保持活动状态，会话就会自动续期，不会过期。
 @EnableAsync
 public class UpuporWebApplication implements CommandLineRunner {
     public static final String STATIC_SOURCE_VERSION;
@@ -70,7 +71,7 @@ public class UpuporWebApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(UpuporWebApplication.class, args);
+        ApplicationContext run = SpringApplication.run(UpuporWebApplication.class, args);
         MemberOperateService bean = run.getBean(MemberOperateService.class);
     }
 
