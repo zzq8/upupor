@@ -1,24 +1,3 @@
-# Upupor 
-让每个人享受分享
-<!--
-![项目访问次数](https://visitor-badge.glitch.me/badge?page_id=github_yangrunkang_upupor)
-<a href="https://www.producthunt.com/posts/upupor?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-upupor" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=327650&theme=dark" alt="Upupor - UGC Website,Open source | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
--->
-
-## 网站
-https://www.upupor.com
-
-## 感谢JetBrains对 upupor 开源项目的支持
-![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
-
-## Star数
-[![Stargazers over time](https://starchart.cc/yangrunkang/upupor.svg)](https://starchart.cc/yangrunkang/upupor)
-
-<!--
-## 统计
-![Alt](https://repobeats.axiom.co/api/embed/18e821e0b79bcf13c83f8d21d669f7264abace1a.svg "Repobeats analytics image")
--->
-
 ## Upupor编码
 出于自己对技术的纯粹和要求,在upupor项目的开发过程中,会遵循以下准则:
 1. 充分使用Java基本特性: 封装、继承、多态
@@ -42,12 +21,6 @@ https://www.upupor.com
 
 地址:
 https://github.com/upupor/cherry-markdown
-
-## 联系方式
-- Email: yangrunkang53@gmail.com
-- wechat: Bla277225635
-
-<img src="docs/wechat.jpg" width="250px" height="250px" alt="微信">
 
 ## QA
 ### 0. 数据库建表语句在哪里?
