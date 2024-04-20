@@ -162,5 +162,19 @@ public class DeflaterUtils {
         String hel = wrap("Hello world");
         System.out.println(hel);
         System.out.println(hel.substring(START.length(), hel.length() - END.length()));
+
+
+        /**
+         * Base64 encoded
+         */
+        // 原始数据
+        String originalData = "Hello, World!";
+        // 编码
+        String encodedData = Base64.getEncoder().encodeToString(originalData.getBytes());
+        System.out.println("Encoded data: " + encodedData);
+        // 解码
+        byte[] decodedBytes = Base64.getDecoder().decode(encodedData);
+        String decodedData = new String(decodedBytes);
+        System.out.println("Decoded data: " + decodedData);
     }
 }
